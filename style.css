@@ -1,0 +1,230 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #74ebd5, #9face6);
+    color: #333;
+    transition: background 0.5s ease;
+}
+
+.app-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* Header */
+.app-header {
+    background: rgba(255, 255, 255, 0.2); /* Light overlay */
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-header h1 {
+    font-family: 'Lobster';
+    color: #ffffff;
+    animation: glow 3s infinite;
+    background-size: cover;
+    font-size: 2.5em;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(196, 15, 15, 0.2);
+}
+
+.dark-mode-toggle {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    background: linear-gradient(to right, #feb47b, #ff7e5f);
+    transform: rotate(360deg);
+}
+
+.dark-mode-toggle i {
+    pointer-events: none;
+}
+
+/* Search Box */
+.search-box {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-box input {
+    width: 80%;
+    padding: 15px;
+    border: none;
+    border-radius: 50px 0 0 50px;
+    outline: none;
+    font-size: 1em;
+}
+
+.search-box button {
+    padding: 15px;
+    background: #ff7e5f;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.2em;
+    transition: background 0.3s ease;
+}
+
+.search-box button:hover {
+    background: #feb47b;
+}
+
+.search-box button i {
+    pointer-events: none;
+}
+
+/* Notification */
+.notification {
+    text-align: center;
+    margin-bottom: 20px;
+    display: none;
+    color: #e74c3c;
+    font-weight: 500;
+}
+
+/* Weather Container */
+.weather-container {
+    display: flex;
+    justify-content: center;
+}
+
+.weather-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.weather-icon i {
+    font-size: 5em;
+    color: #ff7e5f;
+}
+
+.weather-info {
+    margin-top: 20px;
+}
+
+.temperature-value {
+    font-size: 3em;
+    margin: 10px 0;
+}
+
+.temperature-description,
+.location {
+    font-size: 1.2em;
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Forecast Container */
+.forecast-container {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the forecast items */
+    gap: 20px; /* Add space between forecast items */
+}
+
+.forecast-item {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 15px;
+    width: 45%; /* Adjusted width for better centering */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.forecast-item:hover {
+    transform: translateY(-5px);
+}
+
+.forecast-item p {
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+.forecast-item .forecast-date {
+    font-weight: 700;
+    color: #ff7e5f;
+}
+
+.forecast-item i {
+    font-size: 2em;
+    color: #ff7e5f;
+}
+
+/* Dark Mode Styles */
+body.dark {
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+    color: #ffffff;
+}
+
+body.dark .dark-mode-toggle {
+    background: linear-gradient(to right, #1c5868, #1c5868);
+    color: #fff;
+}
+
+body.dark .dark-mode-toggle:hover {
+    background: linear-gradient(to right, #2ecc71, #1abc9c);
+}
+
+body.dark .search-box input {
+    background: #34495e;
+    color: #ecf0f1;
+}
+
+body.dark .weather-card {
+    background: rgba(52, 73, 94, 0.9);
+}
+
+body.dark .forecast-item {
+    background: rgba(52, 73, 94, 0.9);
+}
+
+body.dark .forecast-item .forecast-date {
+    color: #1abc9c;
+}
+
+body.dark .weather-icon i,
+body.dark .forecast-item i {
+    color: #1abc9c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .forecast-item {
+        width: 100%;
+    }
+}
